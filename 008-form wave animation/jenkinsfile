@@ -6,14 +6,15 @@ pipeline {
             git credentialsId: 'db19ea6c-0005-4434-b2f8-02385c2dccce', url: 'git@github.com:CloudGithub1/html-css-javascript-projects.git'
             }
         }
-        stage('Test') { 
+        stage('install httpd') { 
             steps {
-             echo "we are good to go"
+             sh ' yum install httpd -y '
+             sh ' service start httpd '
             }
         }
         stage('Deploy') { 
             steps {
-            echo "will try our best"
+             echo "dvjkhbvkh"
             }
         }
     }
