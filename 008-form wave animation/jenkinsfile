@@ -1,0 +1,20 @@
+pipeline {
+    agent any 
+    stages {
+        stage('git clone') { 
+            steps { 
+            git credentialsId: 'db19ea6c-0005-4434-b2f8-02385c2dccce', url: 'git@github.com:CloudGithub1/html-css-javascript-projects.git'
+            }
+        }
+        stage('Test') { 
+            steps {
+             echo "we are good to go"
+            }
+        }
+        stage('Deploy') { 
+            steps {
+            echo "will try our best"
+            }
+        }
+    }
+}
